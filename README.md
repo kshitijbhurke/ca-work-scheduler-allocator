@@ -9,8 +9,6 @@ Two standalone Windows desktop apps for Chartered Accountant firms. They use Exc
 
 The clients, managers and resources supplied here are fictional samples. Replace them with your own before real use.
 
-For what the apps offer and where they're heading, see the [Product Overview](Product%20Overview.md).
-
 ## Try it in two minutes
 
 These are Windows desktop apps, so they run on your PC, not on GitHub.
@@ -59,7 +57,6 @@ The `web` folder holds Streamlit versions of both apps. They use the same Excel 
 | `Work Schedule.xlsx` | The saved schedule, with 29 sample rows. The Work Scheduler writes this file and the Work Allocator reads it |
 | `Work Allocation.xlsx` | The saved allocations. Created at your first Save in the Work Allocator |
 | `requirements.txt` | Python packages needed |
-| `Product Overview.md` | What the apps offer, and the path to larger firms |
 | `tests/test_apps.py`, `tests/test_web.py` | Automated checks of the desktop and web apps, run on a temporary copy of the sample files |
 | `web/` | The Streamlit web apps |
 | `Run Work Scheduler Web.bat`, `Run Work Allocator Web.bat` | Double-click to start a web app |
