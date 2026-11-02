@@ -4,7 +4,7 @@
 
 Work Scheduler and Work Allocator give a Chartered Accountant firm one connected view of what work is due and who is doing it each day. The Work Scheduler turns the firm's client engagements into a dated list of work for the financial year. The Work Allocator assigns that work to articles and staff, date by date, and produces daily and weekly schedules.
 
-The two Windows desktop apps are ready for small and mid-size firms today. They keep all data in Excel files on the firm's own computers, with no server or subscription. Larger firms will need a planned upgrade that adds logins and access controls.
+Each app comes in two versions: a Windows desktop app and a browser-based web app. Both are ready for small and mid-size firms today, and they share the same Excel files on the firm's own computers, with no hosted server or subscription. Larger firms will need a planned upgrade that adds logins and access controls.
 
 ## The problem
 
@@ -37,6 +37,18 @@ The firm maintains its masters once, the Work Scheduler creates the work, and th
 - **Exports:** day and week schedules in Excel and PDF, ready to circulate, and the month in Excel.
 - **Change control:** nothing is saved until Save is clicked, the app warns if the saved file changed outside it, and work later removed from the schedule is flagged in amber.
 
+### Web versions
+
+The web versions offer the same core workflow in a browser, built with Streamlit, and a firm can use them alongside the desktop apps on the same data.
+
+- **Familiar screens:** the same guided entry, status colours, monthly grid, and day and weekly schedules.
+- **Click to allocate:** a single click on a grid cell opens that day's work and the allocation panel.
+- **Safer saving:** a failed save leaves the existing file intact, and the web Scheduler re-reads the file before each save.
+- **Downloads:** exports download through the browser in the same Excel and PDF layouts.
+- **Stays on one PC:** the web apps run only on the PC that starts them, because they have no logins yet.
+
+Unsaved web allocations are held only in that browser session, so users should click Save before closing the page.
+
 ## Benefits by role
 
 | Role | What they gain |
@@ -52,8 +64,8 @@ Client data stays on the firm's own computers. After the first-time package setu
 
 - **Plain Excel storage:** the firm can open, back up and print its data without the apps.
 - **Configurable masters:** clients, assignments, work types, frequencies, managers and staff are edited in one workbook, and changes appear within seconds.
-- **Low setup:** Python on a Windows PC and two standard packages, set up automatically on first run.
-- **Tested:** automated tests run both apps on Windows, covering scheduling, allocation, saving and exports.
+- **Low setup:** Python on a Windows PC. The launchers install the required packages on first run.
+- **Tested:** automated tests run the desktop and web versions on Windows, covering scheduling, allocation, saving and exports, and check that web-saved allocations load in the desktop app.
 
 ## Growth path to larger firms
 
@@ -61,11 +73,11 @@ The current apps suit firms where a few trusted people maintain the schedule. Ac
 
 | Stage | Status | What it adds |
 | --- | --- | --- |
-| Small and mid-size firms | Available today | Desktop apps on Windows, data in Excel files, access set by folder sharing, one person editing at a time |
+| Small and mid-size firms | Available today | Desktop and web apps on Windows, data in Excel files, access set by folder sharing, one person editing at a time |
 | Growing teams | Planned | Shared database, individual logins, several people working at once, Excel import and export kept |
 | Large firms | Planned | Roles for partner, manager and staff, access by branch or team, audit trail of changes, partner-level reporting |
 
-The master workbook already has a Manager Login ID column ready for individual logins. The firm's masters and working layouts carry forward, so a firm can start small and keep what it has set up.
+The master workbook already has a Manager Login ID column ready for individual logins. The firm's masters and working layouts carry forward, so a firm can start small and keep what it has set up. The web versions give the Growing teams stage a starting point for its browser screens, but they stay on one PC until logins and a shared database are added.
 
 ## Suggested five-minute demonstration
 
@@ -77,6 +89,8 @@ The master workbook already has a Manager Login ID column ready for individual l
 6. Single-click that cell to show the day view, then click Save.
 7. Open the Weekly Schedule, switch to the detailed view, and export it to PDF.
 
+To show the web versions, start them from their web launchers and repeat steps 2 and 5 in the browser. In the web Allocator, a single click on the date cell replaces the double-click.
+
 ## Trying it, current limits and next step
 
 The apps can be tried with the fictional sample data included. The steps are in the [README](README.md), and the code is published for evaluation only.
@@ -84,8 +98,8 @@ The apps can be tried with the fictional sample data included. The steps are in 
 These are the current limits to raise openly:
 
 - **Windows only.** The apps need Python on a Windows PC.
-- **One editor at a time.** Two people saving the same file can overwrite each other, so one person should edit each file at a time.
-- **No logins yet.** Anyone who can open the folder can see and change all of its data.
+- **One editor at a time.** Two people saving the same file can overwrite each other, so one person should edit each file at a time, across the desktop and web versions.
+- **No logins yet.** Anyone who can open the folder can see and change all of its data. The web apps should stay on one PC and should not be hosted online or opened to a network until logins are added.
 - **Backups are the firm's job.** The Excel files are the only copy of the data.
 
 The suggested next step is a short demonstration, followed by a trial using one team's real client list.
