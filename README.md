@@ -28,6 +28,25 @@ python -m unittest discover -s tests -v
 
 The code is published for evaluation only. See [LICENSE](LICENSE).
 
+## Web version
+
+The `web` folder holds Streamlit versions of both apps. They use the same Excel files, so a firm can use the desktop apps, the web apps, or both.
+
+1. Install Python as in the steps above.
+2. Double-click `Run Work Scheduler Web.bat` or `Run Work Allocator Web.bat`. On first use it installs the packages it needs, which can take a few minutes.
+3. The app opens in your browser. Keep the black window open while you use it, and close it to stop the app. If that window asks for an email address on first use, just press Enter.
+
+| App | Address |
+|---|---|
+| Work Scheduler | http://localhost:8501 |
+| Work Allocator | http://localhost:8502 |
+
+- **Only this PC can open them.** `.streamlit/config.toml` keeps the apps on `localhost`, because they have no logins. Anyone who could reach them on a network could see and change all client data.
+- **Close the Excel files before saving,** as with the desktop apps. If a file is open in Excel, the app says so and nothing is lost.
+- **Save in the Work Allocator before closing the page.** Unsaved allocations are held only in that browser session.
+- **Don't save from the desktop and web apps at the same time.** The Work Allocator warns you before saving over a newer file. The Work Scheduler re-reads the file before each save.
+- **Exports** download through your browser.
+
 ## Files
 
 | File | Purpose |
@@ -41,7 +60,10 @@ The code is published for evaluation only. See [LICENSE](LICENSE).
 | `Work Allocation.xlsx` | The saved allocations. Created at your first Save in the Work Allocator |
 | `requirements.txt` | Python packages needed |
 | `Product Overview.md` | What the apps offer, and the path to larger firms |
-| `tests/test_apps.py` | Automated checks of both apps, run on a temporary copy of the sample files |
+| `tests/test_apps.py`, `tests/test_web.py` | Automated checks of the desktop and web apps, run on a temporary copy of the sample files |
+| `web/` | The Streamlit web apps |
+| `Run Work Scheduler Web.bat`, `Run Work Allocator Web.bat` | Double-click to start a web app |
+| `requirements-web.txt`, `.streamlit/config.toml` | Packages and settings for the web apps |
 
 Keep the Excel files in the same folder as the apps. Neither `.py` file needs the other, but the Work Allocator needs a `Work Schedule.xlsx` to allocate from.
 
