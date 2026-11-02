@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.pyc
+
+# Excel lock and temporary files
+~$*
+*.saving.xlsx
+
+# Created by the apps while they are used
+Work Allocation.xlsx
+Work Schedule Export*.xlsx
+Work Allocation Export*.xlsx
+Day Schedule*
+Weekly Schedule*
